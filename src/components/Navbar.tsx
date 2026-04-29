@@ -11,6 +11,8 @@ const navLinks = [
   { label: "Operations", href: "#operations" },
 ];
 
+import { ThemeToggle } from "./theme-toggle";
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,7 +28,7 @@ export default function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         scrolled
-          ? "bg-[#050A18]/90 backdrop-blur-xl border-b border-white/5 py-3"
+          ? "bg-[var(--background)]/90 backdrop-blur-xl border-b border-[var(--border)] py-3"
           : "bg-transparent py-6",
       )}
     >
@@ -38,6 +40,7 @@ export default function Navbar() {
             alt="Logo"
             width={150}
             height={150}
+            className="dark:invert-0 invert transition-all duration-300"
           />
         </a>
 
@@ -47,7 +50,7 @@ export default function Navbar() {
             <li key={link.label}>
               <a
                 href={link.href}
-                className="text-sm text-white/60 hover:text-white transition-colors duration-300 font-medium tracking-wide"
+                className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors duration-300 font-medium tracking-wide"
               >
                 {link.label}
               </a>
@@ -55,8 +58,9 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA */}
-        <div className="hidden md:flex items-center gap-3">
+        {/* CTA & Toggle */}
+        <div className="hidden md:flex items-center gap-6">
+          <ThemeToggle />
           <a
             href="#final-cta"
             className="relative text-sm font-semibold px-5 py-2.5 rounded-full bg-accent-blue text-white overflow-hidden group"
@@ -66,31 +70,34 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-        >
-          <span
-            className={cn(
-              "w-6 h-0.5 bg-white transition-all duration-300",
-              menuOpen && "rotate-45 translate-y-2",
-            )}
-          />
-          <span
-            className={cn(
-              "w-6 h-0.5 bg-white transition-all duration-300",
-              menuOpen && "opacity-0",
-            )}
-          />
-          <span
-            className={cn(
-              "w-6 h-0.5 bg-white transition-all duration-300",
-              menuOpen && "-rotate-45 -translate-y-2",
-            )}
-          />
-        </button>
+        {/* Mobile menu toggle & Theme Toggle */}
+        <div className="md:hidden flex items-center gap-4">
+          <ThemeToggle />
+          <button
+            className="flex flex-col gap-1.5 p-2"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span
+              className={cn(
+                "w-6 h-0.5 bg-[var(--foreground)] transition-all duration-300",
+                menuOpen && "rotate-45 translate-y-2",
+              )}
+            />
+            <span
+              className={cn(
+                "w-6 h-0.5 bg-[var(--foreground)] transition-all duration-300",
+                menuOpen && "opacity-0",
+              )}
+            />
+            <span
+              className={cn(
+                "w-6 h-0.5 bg-[var(--foreground)] transition-all duration-300",
+                menuOpen && "-rotate-45 -translate-y-2",
+              )}
+            />
+          </button>
+        </div>
       </nav>
 
       {/* Mobile menu */}
@@ -100,13 +107,13 @@ export default function Navbar() {
           menuOpen ? "max-h-80 opacity-100" : "max-h-0 opacity-0",
         )}
       >
-        <div className="px-6 py-4 bg-[#050A18]/95 backdrop-blur-xl border-t border-white/5 flex flex-col gap-4">
+        <div className="px-6 py-6 bg-[var(--background)]/95 backdrop-blur-xl border-t border-[var(--border)] flex flex-col gap-4">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={() => setMenuOpen(false)}
-              className="text-white/70 hover:text-white transition-colors font-medium py-1"
+              className="text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors font-medium py-1"
             >
               {link.label}
             </a>

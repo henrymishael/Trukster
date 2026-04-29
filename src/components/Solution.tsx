@@ -30,8 +30,8 @@ export default function Solution() {
   return (
     <section id="solution" className="py-28 relative overflow-hidden">
       {/* Gradient bg */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050A18] via-[#071828] to-[#050A18]" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#0EA5E9]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[var(--background)] via-[var(--card)] to-[var(--background)]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-accent-blue/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
@@ -50,7 +50,7 @@ export default function Solution() {
             />
 
             <FadeIn delay={200}>
-              <p className="text-white/55 leading-relaxed mb-10 font-light text-lg">
+              <p className="text-[var(--muted-foreground)] leading-relaxed mb-10 font-light text-lg">
                 Trukster provides a dual-powered platform that enables users to
                 access assets immediately and move goods efficiently across
                 cities.
@@ -70,7 +70,7 @@ export default function Solution() {
                     >
                       {o.icon}
                     </div>
-                    <p className="text-white/65 leading-relaxed pt-2">
+                    <p className="text-[var(--foreground)]/70 leading-relaxed pt-2">
                       {o.text}
                     </p>
                   </div>
@@ -106,15 +106,15 @@ export default function Solution() {
           <FadeIn direction="left" delay={200}>
             <div className="grid grid-cols-2 gap-4">
               {/* Finance pillar */}
-              <div className="col-span-2 animated-border rounded-2xl bg-[#0B1528] p-6 flex items-center gap-5">
+              <div className="col-span-2 animated-border rounded-2xl bg-[var(--card)] p-6 flex items-center gap-5 border border-[var(--border)]">
                 <div className="w-14 h-14 rounded-2xl bg-[#0EA5E9]/15 border border-[#0EA5E9]/20 flex items-center justify-center text-2xl shrink-0">
                   💼
                 </div>
                 <div>
-                  <h4 className="font-display font-bold text-white mb-1">
+                  <h4 className="font-display font-bold text-[var(--foreground)] mb-1">
                     Asset Financing
                   </h4>
-                  <p className="text-sm text-white/50">
+                  <p className="text-sm text-[var(--muted-foreground)]">
                     Hire purchase for motorcycles, tricycles, and more
                   </p>
                 </div>
@@ -122,20 +122,20 @@ export default function Solution() {
                   <p className="text-2xl font-display font-bold text-[#0EA5E9]">
                     ₦2B+
                   </p>
-                  <p className="text-xs text-white/30">Disbursed</p>
+                  <p className="text-xs text-[var(--muted-foreground)]/50">Disbursed</p>
                 </div>
               </div>
 
               {/* Logistics pillar */}
-              <div className="col-span-2 animated-border rounded-2xl bg-[#0B1528] p-6 flex items-center gap-5">
+              <div className="col-span-2 animated-border rounded-2xl bg-[var(--card)] p-6 flex items-center gap-5 border border-[var(--border)]">
                 <div className="w-14 h-14 rounded-2xl bg-[#10B981]/15 border border-[#10B981]/20 flex items-center justify-center text-2xl shrink-0">
                   🗺️
                 </div>
                 <div>
-                  <h4 className="font-display font-bold text-white mb-1">
+                  <h4 className="font-display font-bold text-[var(--foreground)] mb-1">
                     Logistics Network
                   </h4>
-                  <p className="text-sm text-white/50">
+                  <p className="text-sm text-[var(--muted-foreground)]">
                     Inter-state and intra-city delivery across Nigeria
                   </p>
                 </div>
@@ -143,26 +143,26 @@ export default function Solution() {
                   <p className="text-2xl font-display font-bold text-[#10B981]">
                     24+
                   </p>
-                  <p className="text-xs text-white/30">Cities</p>
+                  <p className="text-xs text-[var(--muted-foreground)]/50">Cities</p>
                 </div>
               </div>
 
               {/* Platform card */}
-              <div className="animated-border rounded-2xl bg-[#0B1528] p-5 text-center">
+              <div className="animated-border rounded-2xl bg-[var(--card)] p-5 text-center border border-[var(--border)]">
                 <p className="text-3xl mb-2">📱</p>
-                <p className="text-sm font-display font-semibold text-white/80">
+                <p className="text-sm font-display font-semibold text-[var(--foreground)]/80">
                   Digital Platform
                 </p>
-                <p className="text-xs text-white/40 mt-1">Track everything</p>
+                <p className="text-xs text-[var(--muted-foreground)]/50 mt-1">Track everything</p>
               </div>
 
               {/* Integration card */}
-              <div className="animated-border rounded-2xl bg-gradient-to-br from-[#0EA5E9]/10 to-[#10B981]/10 p-5 text-center border border-white/5">
+              <div className="animated-border rounded-2xl bg-gradient-to-br from-[#0EA5E9]/10 to-[#10B981]/10 p-5 text-center border border-[var(--border)]">
                 <p className="text-3xl mb-2">🔗</p>
-                <p className="text-sm font-display font-semibold text-white/80">
+                <p className="text-sm font-display font-semibold text-[var(--foreground)]/80">
                   Integrated
                 </p>
-                <p className="text-xs text-white/40 mt-1">One ecosystem</p>
+                <p className="text-xs text-[var(--muted-foreground)]/50 mt-1">One ecosystem</p>
               </div>
             </div>
           </FadeIn>

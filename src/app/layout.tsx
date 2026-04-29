@@ -15,15 +15,24 @@ export const metadata: Metadata = {
   ],
 };
 
+import { ThemeProvider } from "@/components/theme-provider";
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="antialiased noise" suppressHydrationWarning>
-        {children}
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+      <body className="antialiased noise">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

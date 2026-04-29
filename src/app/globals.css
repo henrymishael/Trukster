@@ -70,12 +70,32 @@
 
 /* Base Styles */
 @layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #050a18;
+    --card: #f8fafc;
+    --card-foreground: #050a18;
+    --border: #e2e8f0;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+  }
+
+  .dark {
+    --background: #050a18;
+    --foreground: #ffffff;
+    --card: #0b1528;
+    --card-foreground: #ffffff;
+    --border: rgba(255, 255, 255, 0.05);
+    --muted: #0f1e3d;
+    --muted-foreground: rgba(255, 255, 255, 0.6);
+  }
+
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply font-body bg-navy text-white antialiased;
+    @apply font-body bg-[var(--background)] text-[var(--foreground)] antialiased transition-colors duration-300;
   }
 }
 
@@ -109,7 +129,7 @@
         rgba(16, 185, 129, 0.08) 0%,
         transparent 60%
       ),
-      #050a18;
+      var(--background);
   }
 
   /* Noise texture overlay */

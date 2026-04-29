@@ -20,7 +20,7 @@ import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <main className="bg-[#050A18] text-white overflow-x-hidden">
+    <main className="overflow-x-hidden">
       <Navbar />
       <Hero />
       <About />

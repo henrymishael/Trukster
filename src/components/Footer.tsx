@@ -16,9 +16,9 @@ const links = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#030810] border-t border-white/5">
+    <footer className="bg-[var(--card)] border-t border-[var(--border)]">
       {/* Ticker */}
-      <div className="border-b border-white/5 overflow-hidden">
+      <div className="border-b border-[var(--border)] overflow-hidden">
         <div className="flex ticker-track whitespace-nowrap py-3 gap-12">
           {[...Array(3)].flatMap((_, i) =>
             [
@@ -32,7 +32,7 @@ export default function Footer() {
             ].map((item) => (
               <span
                 key={`${item}-${i}`}
-                className="inline-flex items-center gap-3 text-xs text-white/20 shrink-0 uppercase tracking-widest"
+                className="inline-flex items-center gap-3 text-xs text-[var(--muted-foreground)]/40 shrink-0 uppercase tracking-widest"
               >
                 <span className="w-1 h-1 rounded-full bg-accent-blue/50" />
                 {item}
@@ -54,10 +54,11 @@ export default function Footer() {
                   alt="Logo"
                   width={150}
                   height={150}
+                  className="dark:invert-0 invert transition-all duration-300"
                 />
               </div>
 
-              <p className="text-sm text-white/40 leading-relaxed max-w-xs mb-6">
+              <p className="text-sm text-[var(--muted-foreground)] leading-relaxed max-w-xs mb-6">
                 Technology-driven asset financing and cross-city logistics for
                 entrepreneurs and businesses across Africa.
               </p>
@@ -68,7 +69,7 @@ export default function Footer() {
                   <a
                     key={i}
                     href="#"
-                    className="w-9 h-9 rounded-full border border-white/10 bg-white/5 flex items-center justify-center text-xs text-white/40 hover:text-white hover:border-white/30 transition-all"
+                    className="w-9 h-9 rounded-full border border-[var(--border)] bg-[var(--muted)]/5 flex items-center justify-center text-xs text-[var(--muted-foreground)] hover:text-[var(--foreground)] hover:border-[var(--foreground)]/30 transition-all"
                   >
                     {icon}
                   </a>
@@ -81,7 +82,7 @@ export default function Footer() {
           {Object.entries(links).map(([category, items], i) => (
             <FadeIn key={category} delay={i * 80 + 100}>
               <div>
-                <h4 className="font-display font-semibold text-white text-sm mb-5 tracking-wide">
+                <h4 className="font-display font-semibold text-[var(--foreground)] text-sm mb-5 tracking-wide">
                   {category}
                 </h4>
                 <ul className="space-y-3">
@@ -89,7 +90,7 @@ export default function Footer() {
                     <li key={item}>
                       <a
                         href="#"
-                        className="text-sm text-white/35 hover:text-white/70 transition-colors"
+                        className="text-sm text-[var(--muted-foreground)] hover:text-[var(--foreground)] transition-colors"
                       >
                         {item}
                       </a>
@@ -102,8 +103,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-white/25">
+        <div className="pt-8 border-t border-[var(--border)] flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-[var(--muted-foreground)]/50">
             © {new Date().getFullYear()} Trukster Logistics Limited. All rights
             reserved.
           </p>
@@ -112,7 +113,7 @@ export default function Footer() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-green opacity-75" />
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-accent-green" />
             </span>
-            <span className="text-xs text-white/25">
+            <span className="text-xs text-[var(--muted-foreground)]/50">
               All systems operational
             </span>
           </div>

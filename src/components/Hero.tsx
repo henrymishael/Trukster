@@ -311,11 +311,11 @@ export default function Hero() {
 
           {/* Subheadline */}
           <FadeIn delay={350}>
-            <p className="text-lg text-white/55 leading-relaxed max-w-md mb-10 font-light">
+            <p className="text-lg text-[var(--muted-foreground)] leading-relaxed max-w-md mb-10 font-light">
               Trukster Logistics Limited is a technology-driven platform that
-              provides <span className="text-white/80">asset financing</span>{" "}
+              provides <span className="text-[var(--foreground)] opacity-80">asset financing</span>{" "}
               and{" "}
-              <span className="text-white/80">
+              <span className="text-[var(--foreground)] opacity-80">
                 reliable cross-city delivery
               </span>{" "}
               solutions for individuals and businesses.
@@ -327,7 +327,7 @@ export default function Hero() {
             <div className="flex flex-wrap gap-4">
               <a
                 href="#solution"
-                className="group relative inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#490175] text-white font-semibold text-sm overflow-hidden"
+                className="group relative inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-accent-blue text-white font-semibold text-sm overflow-hidden"
               >
                 <span className="relative z-10">Get Started</span>
                 <svg
@@ -347,7 +347,7 @@ export default function Hero() {
               </a>
               <a
                 href="#how-it-works"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-white/15 text-white/70 hover:text-white hover:border-white/30 font-semibold text-sm transition-all duration-300"
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full border border-[var(--border)] text-[var(--foreground)]/70 hover:text-[var(--foreground)] hover:border-[var(--foreground)]/30 font-semibold text-sm transition-all duration-300"
               >
                 Explore Services
                 <svg
@@ -369,17 +369,17 @@ export default function Hero() {
 
           {/* Stats row */}
           <FadeIn delay={550}>
-            <div className="mt-14 grid grid-cols-3 gap-6 border-t border-white/5 pt-10">
+            <div className="mt-14 grid grid-cols-3 gap-6 border-t border-[var(--border)] pt-10">
               {[
                 { value: "24+", label: "Cities" },
                 { value: "₦2B+", label: "Assets Financed" },
                 { value: "99.2%", label: "On-time Rate" },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <p className="font-display text-3xl font-bold text-white">
+                  <p className="font-display text-3xl font-bold text-[var(--foreground)]">
                     {stat.value}
                   </p>
-                  <p className="text-sm text-white/40 mt-1">{stat.label}</p>
+                  <p className="text-sm text-[var(--muted-foreground)] mt-1">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -389,21 +389,25 @@ export default function Hero() {
         {/* Right: Dashboard mockup */}
         <FadeIn delay={300} direction="left">
           {/* <DashboardMockup /> */}
-          <Image
-            src="/assets/images/bike.jpeg"
-            alt="Asset Financing"
-            width={1000}
-            height={1000}
-          />
+          <div className="relative group">
+            <div className="absolute -inset-4 bg-accent-blue/10 rounded-3xl blur-2xl group-hover:bg-accent-blue/20 transition-all duration-500" />
+            <Image
+              src="/assets/images/bike.jpeg"
+              alt="Asset Financing"
+              width={1000}
+              height={1000}
+              className="relative rounded-2xl border border-[var(--border)] shadow-2xl"
+            />
+          </div>
         </FadeIn>
       </div>
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
-        <span className="text-xs tracking-widest text-white/50 uppercase">
+        <span className="text-xs tracking-widest text-[var(--muted-foreground)] uppercase">
           Scroll
         </span>
-        <div className="w-px h-12 bg-linear-to-b from-white/40 to-transparent" />
+        <div className="w-px h-12 bg-linear-to-b from-[var(--border)] to-transparent" />
       </div>
     </section>
   );
